@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="Calendar.css">
+</head>
+<body>
+
+    <header>
+        <h2 id="month-year-display">Carregando calendário...</h2>
+
+        <div class="controls">
+            <button onclick="changeMonth(-1)">← Mês Anterior</button>
+            <button onclick="changeMonth(1)">Próximo Mês →</button>
+            <input 
+                type="number" 
+                id="yearInput" 
+                placeholder="Ano" 
+                onchange="changeYear()" 
+                aria-label="Selecionar ano"
+            />
+        </div>
+    </header>
+
+    <main>
+        <!-- Calendário -->
+        <section class="calendar">
+            <div class="days-week">
+                <span>Dom</span>
+                <span>Seg</span>
+                <span>Ter</span>
+                <span>Qua</span>
+                <span>Qui</span>
+                <span>Sex</span>
+                <span>Sáb</span>
+            </div><br>
+
+            <div class="number-days">
+                <!-- Dias do mês aparecem aqui via JS -->
+            </div>
+        </section><br>
+
+        <!-- Formulário de destaque e compromissos -->
+<section class="event-form">
+    <h3>Adicionar informações:</h3><br>
+    
+
+
+    <div class="inline-fields">
+        <label for="afazeres"> Compromisso: </label>
+        <input type="text" id="afazeres" placeholder="Ex: Reunião, consulta, etc.">
+
+        <label for="afinidade"> Importância: </label>
+        <select id="afinidade">
+            <option value="0"> Nenhuma. </option>
+            <option value="5"> Pequena. </option>
+            <option value="10"> Média. </option>
+            <option value="20"> Grande. </option>
+            <option value="50"> Extrema. </option>
+        </select>
+
+        <label for="dataInicio"> Data de início: </label>
+        <input type="date" id="dataInicio">
+
+        <label for="dataFim"> Data de fim: </label>
+        <input type="date" id="dataFim">
+
+        <label for="horaInicio"> Horário de início: </label>
+        <input type="time" id="horaInicio">
+
+        <label for="horaFim"> Horário de fim: </label>
+        <input type="time" id="horaFim">
+    </div>
+
+
+    <div class="button-group">
+        <button onclick="highlightDay()"> Destacar Data </button>
+        <button onclick="salvarTudo()"> Salvar Compromissos </button>
+        <button onclick="exportarJSON()"> Exportar Tabela (JSON) </button>
+    </div>
+
+    <br>
+
+</section>
+        <section class="commitments"></section>
+            <table id="chart">
+                <thead>
+                    <tr>
+                        <th>Compromisso</th>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="Calendar.js"></script>
+</body>
+</html>

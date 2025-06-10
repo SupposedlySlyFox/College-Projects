@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Dashboard.css" />
+  <title>Rotina Login</title>
+</head>
+<body>
+  <main class="container">
+    <form onsubmit="return login(event)">
+      <h1>Login Routines</h1>
+
+      <div class="input-box">
+        <label for="usuario">Usuário:</label>
+        <input id="username" placeholder="Digite seu usuário." type="text" />
+      </div>
+
+      <div class="input-box">
+        <label for="senha">Senha:</label>
+        <input id="password" placeholder="Digite sua senha." type="password" />
+      </div>
+
+      <div class="remember-forgot">
+        <label><input type="checkbox" /> Lembrar senha</label>
+        <a href="#">Esqueci a senha</a>
+      </div>
+
+      <button type="submit" class="login">Login</button>
+
+      <div class="register-link">
+      <p>Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+      </div>
+    </form>
+    <div id="msg" style="color: red;"></div>
+  </main>
+  <script src="Dashboard.js"></script>
+</body>
+</html>
